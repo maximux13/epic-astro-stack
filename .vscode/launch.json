@@ -6,6 +6,12 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "./node_modules/.bin/vitest",
+      "name": "Unit tests",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
