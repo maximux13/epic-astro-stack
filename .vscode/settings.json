@@ -1,0 +1,9 @@
+{
+  // Select workspace version of TypeScript over VSCode's built-in version
+  "typescript.tsdk": "./node_modules/typescript/lib",
+
+  // Automatically fix ESLint autofixable errors on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  }
+}
