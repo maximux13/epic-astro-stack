@@ -1,24 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
+
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link type="image/svg+xml" href="/favicon.svg" rel="icon" />
-    <meta content="width=device-width" name="viewport" />
-    <meta content={Astro.generator} name="generator" />
-
-    <title>Astro</title>
-  </head>
-  <body class="grid min-h-screen place-content-center bg-slate-50">
-    <h1>
-      <div class="sr-only">Monoku</div>
-      <Icon
-        class="inline-block align-middle text-xl text-purple-500"
-        name="logo"
-        size={124}
-      />
-    </h1>
-  </body>
-</html>
+<Layout>
+  <h1>
+    <div class="sr-only">Monoku</div>
+    <Icon
+      class="inline-block align-middle text-xl text-purple-500"
+      name="logo"
+      size={124}
+    />
+  </h1>
+</Layout>

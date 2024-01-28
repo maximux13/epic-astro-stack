@@ -1,5 +1,6 @@
 import icon from "astro-icon";
 import sentry from "@sentry/astro";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import spotlightjs from "@spotlightjs/astro";
 import { squooshImageService, defineConfig } from "astro/config";
@@ -31,5 +32,7 @@ export default defineConfig({
       },
     }),
     spotlightjs(),
+    sitemap(),
   ],
+  site: process.env.SITE_URL || "http://localhost:4321",
 });
