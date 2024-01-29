@@ -2,8 +2,9 @@ import icon from "astro-icon";
 import sentry from "@sentry/astro";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 import spotlightjs from "@spotlightjs/astro";
-import { squooshImageService, defineConfig } from "astro/config";
+import { imageService } from "@unpic/astro/service";
 
 import svgoOptions from "./svgo.config";
 
@@ -15,7 +16,10 @@ export default defineConfig({
         protocol: "https",
       },
     ],
-    service: squooshImageService(),
+    service: imageService({
+      fallbackService: "squoosh",
+      placeholder: "blurhash",
+    }),
   },
   integrations: [
     tailwind(),
@@ -34,5 +38,5 @@ export default defineConfig({
     spotlightjs(),
     sitemap(),
   ],
-  site: process.env.SITE_URL || "http://localhost:4321",
+  site: process.env.SITE_URL,
 });
