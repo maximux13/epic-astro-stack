@@ -32,6 +32,9 @@ dependencies:
   astro-robots-txt:
     specifier: ^1.0.0
     version: 1.0.0
+  astro-seo:
+    specifier: ^0.8.0
+    version: 0.8.0
   astro-sitemap:
     specifier: ^1.0.0
     version: 1.0.0
@@ -2848,6 +2851,10 @@ packages:
     dependencies:
       valid-filename: 4.0.0
       zod: 3.22.4
+    dev: false
+
+  /astro-seo@0.8.0:
+    resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
   /astro-sitemap@1.0.0:
