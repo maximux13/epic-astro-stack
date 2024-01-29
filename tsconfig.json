@@ -1,4 +1,5 @@
 {
+  "include": ["**/*.ts", "**/*.js", "**/*.astro"],
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "types": ["vitest-dom/extend-expect"],
