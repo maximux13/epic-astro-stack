@@ -1,0 +1,20 @@
+/* TEAM */
+Company: Monoku SAS - We go Beyond
+
+Description:
+More than design, development or consulting, Monoku seeks to go beyond, not limiting ourselves to meet a schedule or to settle by giving the minimum. We are driven and passionate about not staying still and we want this to be reflected in everything we do. Soon you will see how our new vision is shaped.
+
+/* TECHNOLOGY */
+Technologies Used: Astro, Vanilla JavaScript
+Purpose: Serving static files
+
+/* AUTHORS */
+Template Created by: Andres Alarcon
+Contact: work@andrez.co
+
+/* DEVELOPMENT TEAM */
+Development Team: Monoku Group
+Team Contact: dev@monoku.com
+
+/* ADDITIONAL INFORMATION */
+This document reflects the individuals and technologies behind this project. At Monoku, we strive to go beyond expectations, integrating passion and innovation in everything we do.
