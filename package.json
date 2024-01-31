@@ -2,6 +2,10 @@
   "name": "epic-astro-stack",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@8.14.2",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
