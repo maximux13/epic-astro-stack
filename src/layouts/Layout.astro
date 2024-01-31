@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import { Head } from "astro-capo";
+import { AstroFont } from "astro-font";
 ---
 
 <html lang="en">
@@ -21,6 +22,20 @@ import { Head } from "astro-capo";
       titleTemplate="Monoku | %s"
       title="Epic Astro Starter"
       charset="UTF-8"
+    />
+    <AstroFont
+      config={[
+        {
+          cssVariable: "font-family-sans",
+          display: "swap",
+          fallback: "sans-serif",
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap",
+          name: "Poppins",
+          preload: true,
+          src: [],
+        },
+      ]}
     />
   </Head>
   <body class="grid min-h-screen place-content-center bg-slate-50">
