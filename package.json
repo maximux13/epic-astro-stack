@@ -13,7 +13,12 @@
     "format": "prettier --write \"src/**/*.{astro,js,ts}\"",
     "test": "vitest run",
     "test:ui": "vitest --ui",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:e2e": "npm run test:e2e:dev --silent",
+    "test:e2e:dev": "playwright test --ui",
+    "pretest:e2e:run": "npm run build",
+    "test:e2e:run": "CI=true playwright test",
+    "test:e2e:install": "npx playwright install --with-deps chromium firefox webkit"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -34,7 +39,9 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
+    "@playwright/test": "^1.41.1",
     "@total-typescript/ts-reset": "^0.5.1",
+    "@types/node": "^20.11.13",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "@vitest/coverage-v8": "^1.2.2",

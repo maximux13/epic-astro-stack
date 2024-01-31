@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # Coverage directory used by tools like istanbul
 coverage
+
+# Playwright files
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
