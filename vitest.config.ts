@@ -8,6 +8,7 @@ export default getViteConfig({
       include: ["src/**/*.{ts,astro,js}"],
     },
     environment: "jsdom",
+    include: ["test/*.{test,spec}.{ts,js}"],
     restoreMocks: true,
     setupFiles: ["vitest-setup.ts"],
   },
