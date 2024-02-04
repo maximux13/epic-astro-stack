@@ -37,6 +37,7 @@ Astro Integrations:
 - **Astro Sitemap**: Automatically generate sitemap.xml for your website. [Learn more](https://github.com/alextim/astro-lib/tree/main/packages/astro-sitemap)
 - **Astro Robots-txt**: Create a robots.txt file for controlling search engine indexing. [Learn more](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt)
 - **Astro Unpic**: Optimize images for faster load times. [Learn more](https://unpic.pics/img/astro/)
+- **Astro @spotlightjs**: Spotlight by Sentry is a proactive analytics tool designed to identify and prioritize errors and issues in applications, improving software quality and end-user experience. [Learn more](https://spotlightjs.com/)
 
 These tools and integrations ensure that your development process is efficient, your code quality is high, and your web applications are robust and scalable.
 
@@ -72,7 +73,7 @@ To start the development server, execute:
 pnpm run dev
 ```
 
-This will launch the Astro development server, and your project will be accessible at `http://localhost:3000`. You can now view and interact with your project in real-time.
+This will launch the Astro development server, and your project will be accessible at `http://localhost:4321`. You can now view and interact with your project in real-time.
 
 3. Building for Production
 
