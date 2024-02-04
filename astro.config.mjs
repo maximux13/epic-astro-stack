@@ -1,5 +1,6 @@
 import "dotenv/config";
 import env from "astro-env";
+import { z } from "astro/zod";
 import icon from "astro-icon";
 import sentry from "@sentry/astro";
 import sitemap from "astro-sitemap";
@@ -13,9 +14,14 @@ import { imageService } from "@unpic/astro/service";
 
 import manifest from "./manifest";
 import svgoOptions from "./svgo.config";
-import { schema, getEnv } from "./src/utils/env";
 
-const envs = getEnv();
+const schema = z.object({
+  PUBLIC_SITE_URL: z.string().url(),
+  SECRET_SENTRY_AUTH_TOKEN: z.string().optional(),
+  SECRET_SENTRY_ORG: z.string().optional(),
+  SECRET_SENTRY_PROJECT: z.string().optional(),
+  SECRET_SENTRY_RELEASE: z.string().optional(),
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,11 +50,11 @@ export default defineConfig({
       svgoOptions,
     }),
     sentry({
-      release: envs.SENTRY_RELEASE,
+      release: process.env.SENTRY_RELEASE,
       sourceMapsUploadOptions: {
-        authToken: envs.SENTRY_AUTH_TOKEN,
-        org: envs.SENTRY_ORG,
-        project: envs.SENTRY_PROJECT,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        org: process.env.SENTRY_ORG,
+        project: process.env.SENTRY_PROJECT,
         telemetry: false,
       },
     }),
@@ -72,5 +78,5 @@ export default defineConfig({
     serviceWorker(),
     sitemap(),
   ],
-  site: envs.PUBLIC_SITE_URL,
+  site: process.env.PUBLIC_SITE_URL,
 });
