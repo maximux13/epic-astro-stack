@@ -42,10 +42,12 @@ export default defineConfig({
       generateTypes: true,
       schema,
     }),
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     icon({
       include: {
-        "radix-icons": ["heart-filled"],
+        "radix-icons": ["heart-filled", "arrow-left", "globe"],
       },
       svgoOptions,
     }),

@@ -7,26 +7,29 @@ import Layout from "@/layouts/Layout.astro";
 <Layout>
   <header class="space-y-6 text-center">
     <Icon
-      class="inline-block align-middle text-xl text-purple-500"
+      class="inline-block align-middle text-xl text-primary"
       name="logo"
       size={124}
     />
+
     <div>
       <h1 class="text-3xl font-bold uppercase tracking-wide">Monoku</h1>
-      <p class="text-purple-400">We go beyond</p>
+      <p class="text-primary">We go beyond</p>
     </div>
   </header>
-  <main class="my-8">
-    <h2 class="text-center font-sans text-2xl font-bold text-slate-400">
+
+  <main class="my-8 text-center">
+    <h2 class="font-sans text-2xl font-bold text-secondary">
       Epic Astro Starter Kit
     </h2>
   </main>
-  <footer class="container mx-auto text-center text-sm text-slate-500">
+
+  <footer class="container text-center text-sm">
     <p>Monoku SAS &copy; {new Date().getFullYear()}</p>
     <p>
       Made with
       <Icon
-        class="inline-block align-middle text-purple-500"
+        class="inline-block align-middle text-primary"
         name="radix-icons:heart-filled"
         size={24}
       /> - in the world

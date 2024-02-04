@@ -1,13 +1,29 @@
 ---
-import { SEO } from "astro-seo";
 import { Head } from "astro-capo";
 import { AstroFont } from "astro-font";
+import { type Props as SeoProps, SEO } from "astro-seo";
+
+import "@/styles/global.css";
+
+interface Props {
+  /**
+   * Add or override Astro-seo props to customize SEO per page
+   */
+  head?: Partial<SeoProps>;
+}
+
+const { head: seo = {} } = Astro.props;
 ---
 
 <html lang="en">
   <Head>
     <SEO
+      titleTemplate="Monoku | %s"
+      title="Epic Astro Starter"
+      charset="UTF-8"
+      {...seo}
       extend={{
+        ...seo.extend,
         meta: [
           {
             content: "width=device-width, initial-scale=1.0",
@@ -17,11 +33,9 @@ import { AstroFont } from "astro-font";
             content: Astro.generator,
             name: "generator",
           },
+          ...(seo.extend?.meta || []),
         ],
       }}
-      titleTemplate="Monoku | %s"
-      title="Epic Astro Starter"
-      charset="UTF-8"
     />
     <AstroFont
       config={[
@@ -38,7 +52,7 @@ import { AstroFont } from "astro-font";
       ]}
     />
   </Head>
-  <body class="grid min-h-screen place-content-center bg-slate-50">
+  <body class="grid min-h-screen place-content-center">
     <slot />
   </body>
 </html>

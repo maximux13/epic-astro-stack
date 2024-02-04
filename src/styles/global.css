@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --background: 1% 0% 98%;
+    --foreground: 0 0% 20%;
+    --border: 0 0% 80%;
+    --input: 0 0% 90%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 291 80% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --ring: 271 91% 75%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    --background: 240 30% 5%;
+    --foreground: 0 0% 80%;
+    --border: 240 30% 25%;
+    --input: 240 30% 20%;
+    --primary: 271 91% 65%; /* Considerar ajuste si es necesario */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 291 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --ring: 271 91% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
