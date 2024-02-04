@@ -4,7 +4,6 @@
   "compilerOptions": {
     "types": ["vitest-dom/extend-expect"],
     "baseUrl": ".",
-    "verbatimModuleSyntax": true,
     "paths": {
       "@/*": ["src/*"],
     },
