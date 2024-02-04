@@ -1,20 +1,21 @@
 import { expect, test } from "@playwright/test";
 
 test("has title", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
+  await page.goto("http://localhost:4321");
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await expect(page).toHaveTitle(/Monoku/);
 });
 
-test("get started link", async ({ page }) => {
-  await page.goto("https://playwright.dev/");
+test("has a footer", async ({ page }) => {
+  await page.goto("http://localhost:4321");
 
-  // Click the get started link.
-  await page.getByRole("link", { name: "Get started" }).click();
+  // Expect an element "to be visible".
+  await expect(page.locator("footer")).toBeVisible();
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(
-    page.getByRole("heading", { name: "Installation" }),
-  ).toBeVisible();
+  // Expect an element "to have text" to match current year.
+  const currentYear = new Date().getFullYear();
+  await expect(page.locator("footer")).toHaveText(
+    new RegExp(`© ${currentYear}`),
+  );
 });
