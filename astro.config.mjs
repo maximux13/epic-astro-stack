@@ -38,6 +38,9 @@ export default defineConfig({
     }),
     tailwind(),
     icon({
+      include: {
+        "radix-icons": ["heart-filled"],
+      },
       svgoOptions,
     }),
     sentry({
