@@ -6,11 +6,10 @@ import sentry from "@sentry/astro";
 import sitemap from "astro-sitemap";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
-import { defineConfig } from "astro/config";
 import webmanifest from "astro-webmanifest";
 import spotlightjs from "@spotlightjs/astro";
 import serviceWorker from "astrojs-service-worker";
-import { imageService } from "@unpic/astro/service";
+import { squooshImageService, defineConfig } from "astro/config";
 
 import manifest from "./manifest";
 import svgoOptions from "./svgo.config";
@@ -31,10 +30,7 @@ export default defineConfig({
         protocol: "https",
       },
     ],
-    service: imageService({
-      fallbackService: "squoosh",
-      placeholder: "blurhash",
-    }),
+    service: squooshImageService(),
   },
   integrations: [
     env({

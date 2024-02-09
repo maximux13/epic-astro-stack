@@ -17,9 +17,6 @@ dependencies:
   '@spotlightjs/astro':
     specifier: ^1.0.11
     version: 1.0.11(@sentry/astro@7.98.0)(astro@4.2.6)
-  '@unpic/astro':
-    specifier: ^0.0.41
-    version: 0.0.41(astro@4.2.6)
   astro:
     specifier: ^4.2.6
     version: 4.2.6(@types/node@20.11.13)(typescript@5.3.3)
@@ -76,12 +73,21 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^6.19.1
     version: 6.19.1(eslint@8.56.0)(typescript@5.3.3)
+  '@unpic/pixels':
+    specifier: ^1.2.1
+    version: 1.2.1
+  '@unpic/placeholder':
+    specifier: ^0.1.2
+    version: 0.1.2
   '@vitest/coverage-v8':
     specifier: ^1.2.2
     version: 1.2.2(vitest@1.2.2)
   '@vitest/ui':
     specifier: ^1.2.2
     version: 1.2.2(vitest@1.2.2)
+  blurhash:
+    specifier: ^2.0.5
+    version: 2.0.5
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -1686,7 +1692,7 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
-    dev: false
+    dev: true
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2523,37 +2529,19 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  /@unpic/astro@0.0.41(astro@4.2.6):
-    resolution: {integrity: sha512-25lVLmb2YiX+waix1PzCL2/46FUdLfrWpQXy9xPJuD2ejTdvswvJrD54WpRAAoS7Er0TaoV9XxJEMbJphZB5hw==}
-    peerDependencies:
-      astro: ^2.0.0 || ^3.0.0 || ^4.0.0
-    dependencies:
-      '@unpic/core': 0.0.44
-      '@unpic/pixels': 1.2.1
-      '@unpic/placeholder': 0.1.2
-      astro: 4.2.6(@types/node@20.11.13)(typescript@5.3.3)
-      blurhash: 2.0.5
-    dev: false
-
-  /@unpic/core@0.0.44:
-    resolution: {integrity: sha512-UVZH0ti+8oo2WYvxN0KwDYyGmcxqQq0KBt1ANVjUQwT70ucG0OZmIrOXky/ra48P/jN59LNJ8fRZJcAWkxhUeg==}
-    dependencies:
-      unpic: 3.16.0
-    dev: false
-
   /@unpic/pixels@1.2.1:
     resolution: {integrity: sha512-KM1+LhMALb8J12ZfEcmuK0qKOwUCQNO9cTkjhlJ3lQIoOxf6QcMDdylltOPDAvkAMl3ysR5BLWy7x9edkh7odA==}
     dependencies:
       jpeg-js: 0.4.4
       pngjs: 7.0.0
-      undici: 5.28.2
-    dev: false
+      undici: 5.28.3
+    dev: true
 
   /@unpic/placeholder@0.1.2:
     resolution: {integrity: sha512-O++tS97biojo5sqn5TeTt+jUjl5gWOdIQuOXe8YluTJWq4L0GM6VuTkaspNpsmxHfioJw/6YBirzOpG4t87l8Q==}
     dependencies:
       blurhash: 2.0.5
-    dev: false
+    dev: true
 
   /@vitest/coverage-v8@1.2.2(vitest@1.2.2):
     resolution: {integrity: sha512-IHyKnDz18SFclIEEAHb9Y4Uxx0sPKC2VO1kdDCs1BF6Ip4S8rQprs971zIsooLUn7Afs71GRxWMWpkCGZpRMhw==}
@@ -3157,7 +3145,7 @@ packages:
 
   /blurhash@2.0.5:
     resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==}
-    dev: false
+    dev: true
 
   /boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -5007,7 +4995,7 @@ packages:
 
   /jpeg-js@0.4.4:
     resolution: {integrity: sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==}
-    dev: false
+    dev: true
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -6131,7 +6119,7 @@ packages:
   /pngjs@7.0.0:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
-    dev: false
+    dev: true
 
   /postcss-import@15.1.0(postcss@8.4.33):
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -7479,12 +7467,12 @@ packages:
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  /undici@5.28.2:
-    resolution: {integrity: sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==}
+  /undici@5.28.3:
+    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.1.0
-    dev: false
+    dev: true
 
   /unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
@@ -7611,10 +7599,6 @@ packages:
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-    dev: false
-
-  /unpic@3.16.0:
-    resolution: {integrity: sha512-XXvQGL+fvzwEX3aPXggTCrzySFPqvpC8r1LKy5ft9573AoX8CrszmA0uOzi6xgylCvvqFg46IDOudJKzM2lQ5A==}
     dev: false
 
   /unplugin@1.0.1:
