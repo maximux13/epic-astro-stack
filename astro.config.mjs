@@ -1,6 +1,4 @@
 import "dotenv/config";
-import env from "astro-env";
-import { z } from "astro/zod";
 import icon from "astro-icon";
 import sentry from "@sentry/astro";
 import sitemap from "astro-sitemap";
@@ -9,21 +7,44 @@ import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 import spotlightjs from "@spotlightjs/astro";
 import serviceWorker from "astrojs-service-worker";
-import { squooshImageService, defineConfig } from "astro/config";
+import { squooshImageService, defineConfig, envField } from "astro/config";
 
 import manifest from "./manifest";
 import svgoOptions from "./svgo.config";
 
-const schema = z.object({
-  PUBLIC_SITE_URL: z.string().url(),
-  SECRET_SENTRY_AUTH_TOKEN: z.string().optional(),
-  SECRET_SENTRY_ORG: z.string().optional(),
-  SECRET_SENTRY_PROJECT: z.string().optional(),
-  SECRET_SENTRY_RELEASE: z.string().optional(),
-});
-
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    env: {
+      schema: {
+        PUBLIC_SITE_URL: envField.string({
+          access: "public",
+          context: "client",
+          optional: false,
+        }),
+        SECRET_SENTRY_AUTH_TOKEN: envField.string({
+          access: "secret",
+          context: "server",
+          optional: true,
+        }),
+        SECRET_SENTRY_ORG: envField.string({
+          access: "secret",
+          context: "server",
+          optional: true,
+        }),
+        SECRET_SENTRY_PROJECT: envField.string({
+          access: "secret",
+          context: "server",
+          optional: true,
+        }),
+        SECRET_SENTRY_RELEASE: envField.string({
+          access: "secret",
+          context: "server",
+          optional: true,
+        }),
+      },
+    },
+  },
   image: {
     remotePatterns: [
       {
@@ -33,11 +54,6 @@ export default defineConfig({
     service: squooshImageService(),
   },
   integrations: [
-    env({
-      generateEnvTemplate: true,
-      generateTypes: true,
-      schema,
-    }),
     tailwind({
       applyBaseStyles: false,
     }),

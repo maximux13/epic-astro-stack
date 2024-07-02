@@ -1,5 +1,14 @@
 {
   "include": ["**/*.ts", "**/*.js", "**/*.astro"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "out",
+    "playwright*",
+    "coverage",
+    "test-results",
+  ],
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "types": ["vitest-dom/extend-expect"],
