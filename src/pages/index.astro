@@ -1,16 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
+import IconLogo from "~icons/local/logo";
 
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <header class="space-y-6 text-center">
-    <Icon
-      class="inline-block align-middle text-xl text-primary"
-      name="logo"
-      size={124}
-    />
+    <IconLogo class="inline-block align-middle text-xl text-primary" />
 
     <div>
       <h1 class="text-3xl font-bold uppercase tracking-wide">Monoku</h1>
@@ -26,13 +22,6 @@ import Layout from "@/layouts/Layout.astro";
 
   <footer class="container text-center text-sm">
     <p>Monoku SAS &copy; {new Date().getFullYear()}</p>
-    <p>
-      Made with
-      <Icon
-        class="inline-block align-middle text-primary"
-        name="radix-icons:heart-filled"
-        size={24}
-      /> - in the world
-    </p>
+    <p>Made with ❤️ - in the world</p>
   </footer>
 </Layout>

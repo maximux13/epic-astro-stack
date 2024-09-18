@@ -7,15 +7,15 @@
     "out",
     "playwright*",
     "coverage",
-    "test-results",
+    "test-results"
   ],
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "types": ["vitest-dom/extend-expect"],
+    "types": ["vitest-dom/extend-expect", "unplugin-icons/types/astro"],
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-    },
-  },
+      "@/*": ["src/*"]
+    }
+  }
 }

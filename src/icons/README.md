@@ -1,10 +1,10 @@
 # Icon Usage Documentation
 
-This document outlines the guidelines for using icons in the application with the astroicons.dev integration. It focuses on handling SVGs for effective use as icons and the option to incorporate icon packs from @iconify-json/\*.
+This document outlines the guidelines for using icons in the application with the unplugin-icons integration. It focuses on handling SVGs for effective use as icons and the option to incorporate icon packs from @iconify-json/\*.
 
-## Using astroicons.dev Integration
+## Using unplugin-icons Integration
 
-Astroicons.dev provides a straightforward way to incorporate icons into your Astro project. You can add custom SVG icons or utilize supported icon sets for enhanced flexibility and customization.
+unplugin-icons provides a straightforward way to incorporate icons into your Astro project. You can add custom SVG icons or utilize supported icon sets for enhanced flexibility and customization.
 
 ### Adding Custom Icons
 
@@ -14,10 +14,10 @@ Astroicons.dev provides a straightforward way to incorporate icons into your Ast
 
 ```astro
 ---
-import { Icon } from "astro-icon/components";
+import IconLogo from "~icons/local/logo";
 ---
 
-<Icon name="logo" />
+<IconLogo />
 ```
 
 Replace `"logo"` with the path to your icon relative to the `/src/icons/` directory, considering any sub-folders as part of the path.
@@ -28,25 +28,23 @@ Astro Icon supports all @iconify-json/\* packages, enabling you to use a vast co
 
 1. **Installation**: Ensure the desired @iconify-json/\* package is installed in your project.
 
-2. **Referencing Icons**: Use the `Icon` component, similar to custom SVGs, but specify the icon set and icon name. Documentation on specific syntax for @iconify-json icons can be found in their respective documentation.
+2. **Referencing Icons**: Use the icon pack name and icon name to reference icons. For example, to include a `material-icons` icon named `home`, use the following code:
 
-### Icon Component Props
+```astro
+---
+import IconHome from "~icons/material-icons/home";
+---
 
-The `Icon` component supports several props to customize the icons:
-
-- **`name`:** The name (or path) of the icon.
-- **`title`:** Adds a `<title>` tag to the SVG for accessibility.
-- **`size`, `width`, `height`:** Specify the size of the icon. `size` applies to both width and height.
-
-In addition to these, you can pass any standard HTML attributes to customize the SVG further.
+<IconHome />
+```
 
 ### Optimizing Icon Usage
 
-Astro Icon automatically optimizes repeated references to the same icon on a page using sprites. This feature reduces the overall size of your HTML document by deduplicating icons.
+Unplugin-icons automatically optimizes repeated references to the same icon on a page using sprites. This feature reduces the overall size of your HTML document by deduplicating icons.
 
 ## SVG Icons Considerations
 
-When adding SVG icons to the `/src/icons/` directory for use with astro-icons, keep the following considerations in mind to ensure they integrate seamlessly into your application:
+When adding SVG icons to the `/src/icons/` directory for use with unplugin-icons, keep the following considerations in mind to ensure they integrate seamlessly into your application:
 
 - **Color Handling**: Set the color properties (`fill` or `stroke`) of your SVG icons to `currentColor`. This allows the icons to inherit the text color of their parent element, making it easier to style icons with CSS.
 
@@ -62,4 +60,4 @@ Incorporating these practices will ensure your SVG icons are well-prepared for u
 
 ## Conclusion
 
-By following these guidelines, you can effectively use and manage icons within your Astro-based application. For more advanced customization options or troubleshooting, refer to the [astroicons.dev documentation](https://www.astroicon.dev/).
+By following these guidelines, you can effectively use and manage icons within your Astro-based application. For more advanced customization options or troubleshooting, refer to the [unplugin-icons](https://github.com/unplugin/unplugin-icons)

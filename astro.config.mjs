@@ -1,16 +1,18 @@
-import "dotenv/config";
-import icon from "astro-icon";
-import sentry from "@sentry/astro";
-import sitemap from "astro-sitemap";
 import tailwind from "@astrojs/tailwind";
-import robotsTxt from "astro-robots-txt";
-import webmanifest from "astro-webmanifest";
+import sentry from "@sentry/astro";
 import spotlightjs from "@spotlightjs/astro";
+import robotsTxt from "astro-robots-txt";
+import sitemap from "astro-sitemap";
+import webmanifest from "astro-webmanifest";
+import { defineConfig, envField } from "astro/config";
 import serviceWorker from "astrojs-service-worker";
-import { squooshImageService, defineConfig, envField } from "astro/config";
+import "dotenv/config";
+import { optimize } from "svgo";
+import { FileSystemIconLoader } from "unplugin-icons/loaders";
+import Icon from "unplugin-icons/vite";
 
-import manifest from "./manifest";
-import svgoOptions from "./svgo.config";
+import manifest from "./manifest.mjs";
+import svgoOptions from "./svgo.config.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -51,17 +53,10 @@ export default defineConfig({
         protocol: "https",
       },
     ],
-    service: squooshImageService(),
   },
   integrations: [
     tailwind({
       applyBaseStyles: false,
-    }),
-    icon({
-      include: {
-        "radix-icons": ["heart-filled", "arrow-left", "globe"],
-      },
-      svgoOptions,
     }),
     sentry({
       release: process.env.SENTRY_RELEASE,
@@ -93,4 +88,16 @@ export default defineConfig({
     sitemap(),
   ],
   site: process.env.PUBLIC_SITE_URL,
+  vite: {
+    plugins: [
+      Icon({
+        customCollections: {
+          local: FileSystemIconLoader("src/icons", (svg) => {
+            return optimize(svg, svgoOptions).data;
+          }),
+        },
+        compiler: "astro",
+      }),
+    ],
+  },
 });

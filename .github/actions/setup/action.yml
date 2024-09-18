@@ -9,7 +9,7 @@ inputs:
   pnpm-version:
     description: "pnpm version"
     required: true
-    default: 8
+    default: 9
     type: string
   cache:
     description: "Cache"

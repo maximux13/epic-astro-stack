@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
-
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -10,21 +8,12 @@ import Layout from "@/layouts/Layout.astro";
   }}
 >
   <main class="container space-y-8 text-center">
-    <Icon
-      class="text-inherit inline-block font-semibold text-primary"
-      name="radix-icons:globe"
-      size={64}
-    />
+    🌎
     <h1 class="text-9xl font-bold uppercase tracking-wide">404</h1>
     <p class="text-primary">Page not found.</p>
     <p>The requested URL was not found on this server.</p>
     <p>
-      <a class="text-primary hover:underline" href="/"
-        ><Icon
-          class="inline-block h-4 w-4 font-semibold text-primary"
-          name="radix-icons:arrow-left"
-        /> Go back</a
-      >
+      <a class="text-primary hover:underline" href="/">← Go back</a>
     </p>
   </main>
 </Layout>
